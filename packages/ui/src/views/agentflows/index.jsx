@@ -175,6 +175,7 @@ const Agentflows = () => {
             ) : (
                 <Stack flexDirection='column' sx={{ gap: 3 }}>
                     <ViewHeader
+                        count={total}
                         onSearchChange={onSearchChange}
                         search={true}
                         searchPlaceholder='Search Name or Category'
