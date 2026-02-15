@@ -152,6 +152,7 @@ const Documents = () => {
             ) : (
                 <Stack flexDirection='column' sx={{ gap: 3 }}>
                     <ViewHeader
+                        count={total}
                         onSearchChange={onSearchChange}
                         search={hasDocStores}
                         searchPlaceholder='Search Name'

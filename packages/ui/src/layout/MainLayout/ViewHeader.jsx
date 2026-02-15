@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { useRef } from 'react'
 
 // material-ui
-import { IconButton, Box, OutlinedInput, Toolbar, Typography } from '@mui/material'
+import { IconButton, Box, OutlinedInput, Toolbar, Typography, Chip } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import { StyledFab } from '@/ui-component/button/StyledFab'
 
@@ -19,6 +19,7 @@ const keyboardShortcut = isMac ? '[ ⌘ + F ]' : '[ Ctrl + F ]'
 
 const ViewHeader = ({
     children,
+    count = null,
     filters = null,
     onSearchChange,
     search,
@@ -52,22 +53,36 @@ const ViewHeader = ({
                         </StyledFab>
                     )}
                     <Box sx={{ display: 'flex', alignItems: 'start', flexDirection: 'column' }}>
-                        <Typography
-                            sx={{
-                                fontSize: '1.8rem',
-                                fontWeight: 600,
-                                display: '-webkit-box',
-                                WebkitLineClamp: 3,
-                                WebkitBoxOrient: 'vertical',
-                                textOverflow: 'ellipsis',
-                                overflow: 'hidden',
-                                flex: 1,
-                                maxWidth: 'calc(100vh - 100px)'
-                            }}
-                            variant='h1'
-                        >
-                            {title}
-                        </Typography>
+                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+                            <Typography
+                                sx={{
+                                    fontSize: '1.8rem',
+                                    fontWeight: 600,
+                                    display: '-webkit-box',
+                                    WebkitLineClamp: 3,
+                                    WebkitBoxOrient: 'vertical',
+                                    textOverflow: 'ellipsis',
+                                    overflow: 'hidden',
+                                    flex: 1,
+                                    maxWidth: 'calc(100vh - 100px)'
+                                }}
+                                variant='h1'
+                            >
+                                {title}
+                            </Typography>
+                            {count !== null && (
+                                <Chip
+                                    label={count}
+                                    size='small'
+                                    variant='outlined'
+                                    sx={{
+                                        height: 'fit-content',
+                                        fontSize: '0.875rem',
+                                        fontWeight: 600
+                                    }}
+                                />
+                            )}
+                        </Box>
                         {description && (
                             <Typography
                                 sx={{
@@ -137,6 +152,7 @@ const ViewHeader = ({
 
 ViewHeader.propTypes = {
     children: PropTypes.node,
+    count: PropTypes.number,
     filters: PropTypes.node,
     onSearchChange: PropTypes.func,
     search: PropTypes.bool,

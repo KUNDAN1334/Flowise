@@ -243,6 +243,7 @@ const Credentials = () => {
                 ) : (
                     <Stack flexDirection='column' sx={{ gap: 3 }}>
                         <ViewHeader
+                            count={credentials.length}
                             onSearchChange={onSearchChange}
                             search={true}
                             searchPlaceholder='Search Credentials'

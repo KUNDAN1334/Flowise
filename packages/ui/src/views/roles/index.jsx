@@ -538,7 +538,7 @@ const Roles = () => {
                     <ErrorBoundary error={error} />
                 ) : (
                     <Stack flexDirection='column' sx={{ gap: 3 }}>
-                        <ViewHeader onSearchChange={onSearchChange} search={true} searchPlaceholder='Search Roles' title='Roles'>
+                        <ViewHeader count={roles.length} onSearchChange={onSearchChange} search={true} searchPlaceholder='Search Roles' title='Roles'>
                             <StyledPermissionButton
                                 permissionId={'roles:manage'}
                                 variant='contained'

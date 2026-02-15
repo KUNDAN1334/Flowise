@@ -180,6 +180,7 @@ const Evaluators = () => {
                 ) : (
                     <Stack flexDirection='column' sx={{ gap: 3 }}>
                         <ViewHeader
+                            count={total}
                             isBackButton={false}
                             isEditButton={false}
                             onSearchChange={onSearchChange}

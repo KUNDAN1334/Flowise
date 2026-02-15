@@ -403,6 +403,7 @@ const Workspaces = () => {
                 ) : (
                     <Stack flexDirection='column' sx={{ gap: 3 }}>
                         <ViewHeader
+                            count={workspaces.length}
                             isBackButton={false}
                             isEditButton={false}
                             onSearchChange={onSearchChange}

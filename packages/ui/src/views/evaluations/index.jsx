@@ -298,7 +298,7 @@ const EvalsEvaluation = () => {
                     <ErrorBoundary error={error} />
                 ) : (
                     <Stack flexDirection='column' sx={{ gap: 3 }}>
-                        <ViewHeader isBackButton={false} isEditButton={false} search={false} title={'Evaluations'} description=''>
+                        <ViewHeader count={total} isBackButton={false} isEditButton={false} search={false} title={'Evaluations'} description=''>
                             <ToggleButton
                                 value='auto-refresh'
                                 selected={autoRefresh}
